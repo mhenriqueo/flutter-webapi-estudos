@@ -1,3 +1,7 @@
+## flutter_webapi_estudos
+
+Este é um projeto para estudo de Flutter com Web API, referente a formação de `Flutter: Web API - Integrando sua Aplicação` da Alura.
+
 ## ✔️ Técnicas e tecnologias
 
 **Veja mais de perto o que você aprenderá sobre** :
@@ -20,4 +24,4 @@ O código do Projeto são **Classes** e **Funções** para gerar uma aplicação
 - Ter uma IDE, que pode ser o  [Android Studio](https://developer.android.com/) instalado na sua máquina;
 - Ter a [SDK do Flutter](https://docs.flutter.dev/get-started/install) na versão 3.0.0;
 - Ter o [Node.JS](https://nodejs.org/en/) instalado na sua máquina;
-- (A partir da branch "Aula 02")  Ter um servidor [JSON-Server](https://www.npmjs.com/package/json-server) rodando o arquivo [server/db.json] em um endereço visível ao emulador usado;
+- Ter um servidor [JSON-Server](https://www.npmjs.com/package/json-server) rodando o arquivo [server/db.json] em um endereço visível ao emulador usado;
