@@ -1,0 +1,22 @@
+{
+  "learnhttp": [
+    {
+      "id": "15f3",
+      "content": "Olá mundo!"
+    }
+  ],
+  "journals": [
+    {
+      "id": "42a7a8d0-6ed8-11ef-8839-115c7a325822",
+      "content": "testeeeee",
+      "created_at": "2024-09-07 15:20:25.446007",
+      "updated_at": "2024-09-07 15:20:25.446007"
+    },
+    {
+      "id": "493b9e90-6ed8-11ef-8839-115c7a325822",
+      "content": "fdgdfhgbfhbgdfhbg",
+      "created_at": "2024-09-05 15:20:25.446007",
+      "updated_at": "2024-09-05 15:20:25.446007"
+    }
+  ]
+}
