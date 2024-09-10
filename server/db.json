@@ -1,4 +1,21 @@
 {
+  "users": [
+    {
+      "email": "mhenriqueTest@gmail.com",
+      "password": "$2a$10$ZIvV5ApG3PV1x2iz..xMnO4qms4lBtFSWlMBgNc6REfepaYfyk2fy",
+      "id": 1
+    },
+    {
+      "email": "mhenriqueTest2@gmail.com",
+      "password": "$2a$10$kTU7H5a7UoYHdzy3OJ0pqOByR4bY/sl0NT1fLIjPrydJf4LQBHrL2",
+      "id": 2
+    },
+    {
+      "email": "mhenriqueTest3@gmail.com",
+      "password": "$2a$10$1aT9t.pzZyI6Gi2qITEPCeoYxA0J0VT.8nWDQSoIBmJ7/AwY2xJcq",
+      "id": 3
+    }
+  ],
   "learnhttp": [
     {
       "id": "15f3",
