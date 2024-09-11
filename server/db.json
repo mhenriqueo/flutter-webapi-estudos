@@ -24,10 +24,32 @@
   ],
   "journals": [
     {
-      "id": "42a7a8d0-6ed8-11ef-8839-115c7a325822",
-      "content": "testeeeee",
-      "created_at": "2024-09-07 15:20:25.446007",
-      "updated_at": "2024-09-07 15:20:25.446007"
+      "id": "734b8d70-705f-11ef-afe3-a1be33170072",
+      "content": "Teste Novo",
+      "created_at": "2024-09-10 14:00:51.760972",
+      "updated_at": "2024-09-10 14:00:51.760972",
+      "userId": 1
+    },
+    {
+      "id": "7cc760e0-705f-11ef-afe3-a1be33170072",
+      "content": "issoooo aiiii!! :D",
+      "created_at": "2024-09-08 14:00:51.760972",
+      "updated_at": "2024-09-08 14:00:51.760972",
+      "userId": 1
+    },
+    {
+      "id": "e1f55350-705f-11ef-afe3-a1be33170072",
+      "content": "Outro Teste :D",
+      "created_at": "2024-09-08 14:03:54.245653",
+      "updated_at": "2024-09-08 14:03:54.245653",
+      "userId": 3
+    },
+    {
+      "id": "ea0f25c0-705f-11ef-afe3-a1be33170072",
+      "content": "Novo Diario!!",
+      "created_at": "2024-09-04 14:03:54.245653",
+      "updated_at": "2024-09-04 14:03:54.245653",
+      "userId": 3
     }
   ]
 }

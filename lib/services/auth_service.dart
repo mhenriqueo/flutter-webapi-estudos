@@ -35,7 +35,7 @@ class AuthService {
     return true;
   }
 
-  register({required String email, required String password}) async {
+  Future<bool> register({required String email, required String password}) async {
     http.Response response = await client.post(
       Uri.parse("${url}register"),
       body: {
@@ -45,15 +45,12 @@ class AuthService {
     );
 
     if(response.statusCode != 201){
-      // String content = json.decode(response.body);
-      // switch(content){
-      //   case "Cannot find user":
-      //     throw UserNotFindException();
-      // }
       throw HttpException(response.body);
     }
 
     saveUsersInfos(response.body);
+
+    return true;
   }
 
   saveUsersInfos(String body) async {
