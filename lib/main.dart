@@ -49,7 +49,6 @@ class MyApp extends StatelessWidget {
       routes: {
         "home": (context) => const HomeScreen(),
         "login": (context) => LoginScreen(),
-        // "add-journal": (context) => AddJournalScreen(journal: Journal(id: "id", content: "content", createdAt: DateTime.now(), updatedAt: DateTime.now())),
       },
       onGenerateRoute: (settings) {
         if(settings.name == "add-journal"){
