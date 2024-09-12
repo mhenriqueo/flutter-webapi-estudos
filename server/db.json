@@ -1,4 +1,21 @@
 {
+  "users": [
+    {
+      "email": "mhenriqueTest@gmail.com",
+      "password": "$2a$10$ZIvV5ApG3PV1x2iz..xMnO4qms4lBtFSWlMBgNc6REfepaYfyk2fy",
+      "id": 1
+    },
+    {
+      "email": "mhenriqueTest2@gmail.com",
+      "password": "$2a$10$kTU7H5a7UoYHdzy3OJ0pqOByR4bY/sl0NT1fLIjPrydJf4LQBHrL2",
+      "id": 2
+    },
+    {
+      "email": "mhenriqueTest3@gmail.com",
+      "password": "$2a$10$1aT9t.pzZyI6Gi2qITEPCeoYxA0J0VT.8nWDQSoIBmJ7/AwY2xJcq",
+      "id": 3
+    }
+  ],
   "learnhttp": [
     {
       "id": "15f3",
@@ -7,10 +24,39 @@
   ],
   "journals": [
     {
-      "id": "42a7a8d0-6ed8-11ef-8839-115c7a325822",
-      "content": "testeeeee",
-      "created_at": "2024-09-07 15:20:25.446007",
-      "updated_at": "2024-09-07 15:20:25.446007"
+      "id": "734b8d70-705f-11ef-afe3-a1be33170072",
+      "content": "Teste Novo!!",
+      "created_at": "2024-09-10 14:00:51.760972",
+      "updated_at": "2024-09-12 10:27:04.663370",
+      "userId": 1
+    },
+    {
+      "id": "7cc760e0-705f-11ef-afe3-a1be33170072",
+      "content": "issoooo aiiii!! :D",
+      "created_at": "2024-09-08 14:00:51.760972",
+      "updated_at": "2024-09-08 14:00:51.760972",
+      "userId": 1
+    },
+    {
+      "id": "e1f55350-705f-11ef-afe3-a1be33170072",
+      "content": "Outro Teste :D",
+      "created_at": "2024-09-08 14:03:54.245653",
+      "updated_at": "2024-09-08 14:03:54.245653",
+      "userId": 3
+    },
+    {
+      "id": "6955b150-710a-11ef-88f8-07ab475d5f3f",
+      "content": "Hoje  é sextaaaaa!!",
+      "created_at": "2024-09-06 10:24:19.631330",
+      "updated_at": "2024-09-12 10:25:30.636438",
+      "userId": 3
+    },
+    {
+      "id": "c3527f30-710a-11ef-88f8-07ab475d5f3f",
+      "content": "bla bla bla",
+      "created_at": "2024-09-12 10:26:48.435389",
+      "updated_at": "2024-09-12 10:26:48.435389",
+      "userId": 1
     }
   ]
 }

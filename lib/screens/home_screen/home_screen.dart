@@ -1,7 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_webapi_first_course/screens/commom/exception_dialog.dart';
 import 'package:flutter_webapi_first_course/screens/home_screen/widgets/home_screen_list.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
+import '../../helpers/logout.dart';
 import '../../models/journal.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,7 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final ScrollController _listScrollController = ScrollController();
 
-  JournalService service = JournalService();
+  final JournalService service = JournalService();
+
+  int? userId;
+  String? userToken;
 
   @override
   void initState() {
@@ -48,26 +57,84 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: ListView(
-        controller: _listScrollController,
-        children: generateListJournalCards(
-          windowPage: windowPage,
-          currentDay: currentDay,
-          database: database,
-          refreshFunction: refresh,
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              onTap: (){
+                logout(context);
+              },
+              leading: const Icon(Icons.logout),
+              title: const Text("Sair"),
+            )
+          ],
         ),
       ),
+      body: (userId != null && userToken != null)
+        ? ListView(
+            controller: _listScrollController,
+            children: generateListJournalCards(
+              windowPage: windowPage,
+              currentDay: currentDay,
+              database: database,
+              refreshFunction: refresh,
+              userId: userId!,
+              token: userToken!,
+            ),
+          ) : const Center(child: CircularProgressIndicator(),),
     );
   }
 
-  void refresh() async {
-    List<Journal> listJournal = await service.getAll();
+  void refresh() {
+    SharedPreferences.getInstance().then(
+      (prefs) {
+        String? token = prefs.getString("accessToken");
+        String? email = prefs.getString("email");
+        int? id = prefs.getInt("id");
 
-    setState(() {
-      database = {};
-      for(Journal journal in listJournal){
-        database[journal.id] = journal;
+        if(token != null && email != null && id != null){
+
+          bool isTokenExpired = JwtDecoder.isExpired(token);
+
+          if (isTokenExpired) {
+            logout(context);
+
+          } else {
+            setState(() {
+              userId = id;
+              userToken = token;
+            });
+
+            service.getAll(id: id.toString(), token: token).then((List<Journal> listJournal){
+              setState(() {
+                database = {};
+                for(Journal journal in listJournal){
+                  database[journal.id] = journal;
+                }
+
+                if (_listScrollController.hasClients) {
+                  final double position = _listScrollController.position.maxScrollExtent;
+                  _listScrollController.jumpTo(position);
+                }
+              });
+            });
+          }
+        } else {
+          Navigator.pushReplacementNamed(context, "login");
+        }
       }
-    });
+    ).catchError(
+      (error){
+        logout(context);
+      },
+      test: (error) => error is TokenNotValidException,
+    ).catchError(
+      (error){
+        var innerError = error as HttpException;
+        showExceptionDialog(context, content: innerError.message);
+      },
+      test: (error) => error is HttpException,
+    );
   }
+
 }
